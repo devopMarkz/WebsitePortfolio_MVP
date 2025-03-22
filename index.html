@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Digital</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Crie seu Portfólio Digital</h1>
+    </header>
+
+    <main>
+        <form id="portfolioForm" action="backend/save_portfolio.php" method="POST" enctype="multipart/form-data">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="description">Descrição:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="image">Imagem do Projeto:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <button type="submit">Criar Portfólio</button>
+        </form>
+
+        <div id="portfolioGallery"></div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
