@@ -71,6 +71,17 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
    );
 
+   CREATE TABLE comments (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       portfolio_id INT NOT NULL,
+       user_id INT NOT NULL,
+       comment TEXT NOT NULL,
+       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+       FOREIGN KEY (portfolio_id) REFERENCES portfolios(id) ON DELETE CASCADE,
+       FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+   );
+   
+
 3. Coloque os arquivos em C:/xampp/htdocs/portfolio-website/.
 
 4. Acesse no navegador:
