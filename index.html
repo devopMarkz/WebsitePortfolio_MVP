@@ -4,32 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Digital</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
     <header>
-        <h1>Crie seu Portfólio Digital</h1>
-        <a href="users/index.php">Meus Portfólios</a>
-        <a href="login.html">Login</a>
+        <h1>Portfólio Digital</h1>
     </header>
 
     <main>
-        <form id="portfolioForm" action="backend/save_portfolio.php" method="POST" enctype="multipart/form-data">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
+        <h2>Crie e Compartilhe Seu Portfólio</h2>
+        <p>Cadastre-se, publique seus projetos e compartilhe com o mundo!</p>
 
-            <label for="description">Descrição:</label>
-            <textarea id="description" name="description" required></textarea>
+        <div class="button-container">
+            <a href="register.html" class="button">Criar Conta</a>
+            <a href="login.html" class="button">Login</a>
+        </div>
 
-            <label for="image">Imagem do Projeto:</label>
-            <input type="file" id="image" name="image" accept="image/*" required>
-
-            <button type="submit">Criar Portfólio</button>
-        </form>
-
+        <h3>Últimos Portfólios</h3>
         <div id="portfolioGallery"></div>
     </main>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
 </body>
 </html>
