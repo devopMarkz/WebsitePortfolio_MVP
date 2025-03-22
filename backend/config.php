@@ -1,9 +1,9 @@
 <?php
-$host = "localhost"; // Ou "127.0.0.1"
-$port = "3307"; // Porta do MySQL no Docker
+$host = "localhost";
+$port = "3307"; // Porta do MySQL rodando no Docker
 $dbname = "portfolio_db";
 $username = "root";
-$password = "123"; // Insira a senha correta se houver
+$password = "123"; // Se houver senha, substitua aqui
 
 try {
     $conn = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $username, $password);
