@@ -2,17 +2,20 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar-se</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/register.css">
 </head>
 <body>
-    <form action="backend/register.php" method="POST">
+    <div class="register-container">
         <h2>Registro</h2>
-        <input type="text" name="username" placeholder="Nome de usuário" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Senha" required>
-        <button type="submit">Registrar</button>
-    </form>
-    <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+        <form action="backend/register.php" method="POST">
+            <input type="text" name="username" placeholder="Nome de usuário" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Senha" required>
+            <button type="submit">Registrar</button>
+        </form>
+        <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+    </div>
 </body>
 </html>
