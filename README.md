@@ -16,30 +16,8 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
 ✅ **Compartilhamento via Link**  
 
 ## 📂 Estrutura do Projeto
-/portfolio-website
- ├── /assets
- │   ├── /css
- │   │   └── style.css
- │   ├── /js
- │   │   └── main.js
- │   ├── /img
- ├── /backend
- │   ├── config.php
- │   ├── auth.php
- │   ├── register.php
- │   ├── login.php
- │   ├── logout.php
- │   ├── save_portfolio.php
- │   ├── edit_portfolio.php
- │   ├── delete_portfolio.php
- │   ├── get_portfolios.php
- ├── /users
- │   ├── index.php
- ├── index.html
- ├── login.html
- ├── register.html
- ├── portfolio.html
- ├── README.md
+
+/portfolio-website ├── /assets │ ├── /css │ │ └── style.css │ ├── /js │ │ └── main.js │ ├── /img ├── /backend │ ├── config.php │ ├── auth.php │ ├── register.php │ ├── login.php │ ├── logout.php │ ├── save_portfolio.php │ ├── edit_portfolio.php │ ├── delete_portfolio.php │ ├── get_portfolios.php ├── /users │ ├── index.php ├── index.html ├── login.html ├── register.html ├── portfolio.html ├── README.md
 
 
 ## 💻 Como Rodar o Projeto
