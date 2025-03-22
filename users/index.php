@@ -20,10 +20,9 @@ $portfolios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../assets/css/users.css">
 </head>
 <body>
-    <header>
-        <h2>Bem-vindo, <?= htmlspecialchars($_SESSION['username']); ?></h2>
-        <a href="../backend/logout.php" class="button logout-button">Sair</a>
-    </header>
+
+    <?php include '../includes/navbar.php'; ?>
+    <link rel="stylesheet" href="../assets/css/navbar.css">
 
     <main>
         <h3>Seus Portfólios</h3>

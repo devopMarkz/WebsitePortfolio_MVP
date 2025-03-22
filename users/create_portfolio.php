@@ -11,10 +11,8 @@ include '../backend/auth.php';
     <link rel="stylesheet" href="../assets/css/create_portfolio.css">
 </head>
 <body>
-    <header>
-        <h2>Criar Novo Portfólio</h2>
-        <a href="index.php">Voltar</a>
-    </header>
+    <?php include '../includes/navbar.php'; ?>
+    <link rel="stylesheet" href="../assets/css/navbar.css">
 
     <main>
         <form action="../backend/save_portfolio.php" method="POST" enctype="multipart/form-data">

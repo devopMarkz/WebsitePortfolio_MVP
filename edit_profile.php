@@ -26,9 +26,8 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="assets/css/edit_profile.css">
 </head>
 <body>
-    <header>
-        <h1>Editar Perfil</h1>
-    </header>
+    <?php include 'includes/navbar.php'; ?>
+    <link rel="stylesheet" href="assets/css/navbar.css">
 
     <main>
         <form action="backend/update_profile.php" method="POST" enctype="multipart/form-data">
