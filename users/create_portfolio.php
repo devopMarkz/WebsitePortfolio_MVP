@@ -8,7 +8,7 @@ include '../backend/auth.php';
 <head>
     <meta charset="UTF-8">
     <title>Criar Portfólio</title>
-    <link rel="stylesheet" href="../assets/css/users.css">
+    <link rel="stylesheet" href="../assets/css/create_portfolio.css">
 </head>
 <body>
     <header>
