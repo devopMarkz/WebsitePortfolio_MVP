@@ -53,11 +53,13 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
 
    USE portfolio_db;
 
-   CREATE TABLE users (
+    CREATE TABLE users (
        id INT AUTO_INCREMENT PRIMARY KEY,
        username VARCHAR(50) UNIQUE NOT NULL,
        email VARCHAR(100) UNIQUE NOT NULL,
        password VARCHAR(255) NOT NULL,
+       profile_pic VARCHAR(255) DEFAULT 'default.png',
+       bio TEXT DEFAULT '',
        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
    );
 
