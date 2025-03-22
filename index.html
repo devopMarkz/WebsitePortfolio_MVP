@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Digital</title>
     <link rel="stylesheet" href="assets/css/index.css">
+    <script>
+        // Verifica se o usuário está logado e redireciona para index.php
+        fetch("backend/auth.php")
+            .then(response => response.json())
+            .then(data => {
+                if (data.logged_in) {
+                    window.location.href = "users/index.php";
+                }
+            });
+    </script>
 </head>
 <body>
     <header>
