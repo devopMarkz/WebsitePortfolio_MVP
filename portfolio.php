@@ -8,8 +8,9 @@ if (!$portfolio_id) {
     die("Portfólio não encontrado.");
 }
 
-$stmt = $conn->prepare("SELECT * FROM portfolios WHERE id = :id");
-$stmt->bindParam(':id', $portfolio_id);
+// Buscar detalhes do portfólio
+$stmt = $conn->prepare("SELECT p.*, u.username FROM portfolios p JOIN users u ON p.user_id = u.id WHERE p.id = :id");
+$stmt->bindParam(':id', $portfolio_id, PDO::PARAM_INT);
 $stmt->execute();
 $portfolio = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -24,16 +25,22 @@ if (!$portfolio) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($portfolio['name']) ?></title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
 </head>
 <body>
     <header>
         <h1><?= htmlspecialchars($portfolio['name']) ?></h1>
+        <p>por <?= htmlspecialchars($portfolio['username']) ?></p>
     </header>
 
     <main>
-        <img src="assets/img/<?= htmlspecialchars($portfolio['image']) ?>" alt="Imagem do Projeto" width="100%">
+        <img src="assets/img/<?= htmlspecialchars($portfolio['image']) ?>" alt="Imagem do Projeto" class="portfolio-img">
         <p><?= nl2br(htmlspecialchars($portfolio['description'])) ?></p>
+
+        <!-- Compartilhamento -->
+        <h3>Compartilhe este Portfólio:</h3>
+        <input type="text" id="shareLink" value="http://localhost/portfolio-website/portfolio.php?id=<?= $portfolio_id; ?>" readonly>
+        <button onclick="copyLink()">Copiar Link</button>
 
         <!-- Formulário de Comentários -->
         <h3>Deixe um Comentário:</h3>
@@ -92,6 +99,15 @@ if (!$portfolio) {
                 });
             });
         });
+
+        // Função para copiar o link
+        function copyLink() {
+            var copyText = document.getElementById("shareLink");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            alert("Link copiado!");
+        }
     </script>
 </body>
 </html>
