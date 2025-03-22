@@ -14,16 +14,20 @@ $portfolios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Meus Portfólios</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/users.css">
 </head>
 <body>
     <header>
-        <h2>Bem-vindo, <?= $_SESSION['username']; ?></h2>
-        <a href="../backend/logout.php" class="button">Sair</a>
+        <h2>Bem-vindo, <?= htmlspecialchars($_SESSION['username']); ?></h2>
+        <a href="../backend/logout.php">Sair</a>
     </header>
 
     <h3>Seus Portfólios</h3>
-    <a href="../index.html" class="button">Criar Novo Portfólio</a>
+
+    <div class="button-container">
+        <!-- Corrigindo o link para um formulário de criação de portfólio -->
+        <a href="create_portfolio.php" class="button">Criar Novo Portfólio</a>
+    </div>
 
     <div id="portfolioGallery">
         <?php foreach ($portfolios as $portfolio): ?>
