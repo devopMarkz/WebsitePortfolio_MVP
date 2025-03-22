@@ -23,9 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':image', $imageName);
 
     if ($stmt->execute()) {
-        echo "Portfólio criado com sucesso!";
+        echo "<script>
+                alert('Portfólio criado com sucesso!');
+                window.location.href = '../users/index.php';
+              </script>";
+        exit(); // Garante que o redirecionamento ocorra corretamente
     } else {
-        echo "Erro ao criar portfólio.";
-    }
+        echo "<script>alert('Erro ao criar portfólio. Tente novamente.');</script>";
+    }    
+    
 }
 ?>
