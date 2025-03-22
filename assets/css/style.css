@@ -1,31 +1,43 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* Corpo da página */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Cabeçalho */
 header {
     background-color: #4CAF50;
     color: white;
-    text-align: center;
-    padding: 20px 0;
+    padding: 20px;
+    font-size: 24px;
 }
 
+/* Estrutura principal */
 main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
+/* Formulários */
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 10px;
 }
 
 input, textarea, button {
@@ -38,21 +50,34 @@ input, textarea, button {
 button {
     background-color: #4CAF50;
     color: white;
+    font-size: 16px;
     cursor: pointer;
     border: none;
+    padding: 10px;
 }
 
+button:hover {
+    background-color: #45a049;
+}
+
+/* Galeria de portfólios */
 #portfolioGallery {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+    justify-content: center;
 }
 
 .portfolio-item {
     background-color: #e0e0e0;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
-    width: calc(33.333% - 10px);
+    width: 250px;
     text-align: center;
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    border-radius: 5px;
 }
