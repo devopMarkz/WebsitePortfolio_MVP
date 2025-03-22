@@ -20,9 +20,18 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
 /portfolio-website
  ├── /assets
  │   ├── /css
- │   │   └── style.css
+ │   │   ├── style.css
+ │   │   ├── index.css
+ │   │   ├── users.css
+ │   │   ├── portfolio.css
+ │   │   ├── profile.css
+ │   │   ├── edit_profile.css
+ │   │   ├── create_portfolio.css
+ │   │   ├── login.css
+ │   │   ├── register.css
  │   ├── /js
- │   │   └── main.js
+ │   │   ├── main.js
+ │   │   ├── animations.js
  │   ├── /img
  ├── /backend
  │   ├── config.php
@@ -34,12 +43,19 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
  │   ├── edit_portfolio.php
  │   ├── delete_portfolio.php
  │   ├── get_portfolios.php
+ │   ├── get_portfolio.php
+ │   ├── add_comment.php
+ │   ├── get_comments.php
+ │   ├── update_profile.php
  ├── /users
  │   ├── index.php
+ │   ├── create_portfolio.php
  ├── index.html
  ├── login.html
  ├── register.html
- ├── portfolio.html
+ ├── portfolio.php
+ ├── profile.php
+ ├── edit_profile.php
  ├── README.md
  ```
 
