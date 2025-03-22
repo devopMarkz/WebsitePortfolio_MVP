@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Portfólio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Portfólio</h1>
+    </header>
+
+    <main>
+        <div id="portfolioDetails">
+            <h2 id="portfolioTitle"></h2>
+            <img id="portfolioImage" src="" alt="Imagem do Projeto" width="100%">
+            <p id="portfolioDescription"></p>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get("id");
+
+            if (!id) {
+                document.getElementById("portfolioDetails").innerHTML = "<p>Portfólio não encontrado.</p>";
+                return;
+            }
+
+            fetch(`backend/get_portfolios.php`)
+                .then(response => response.json())
+                .then(data => {
+                    const portfolio = data.find(p => p.id == id);
+                    if (portfolio) {
+                        document.getElementById("portfolioTitle").textContent = portfolio.name;
+                        document.getElementById("portfolioImage").src = `assets/img/${portfolio.image}`;
+                        document.getElementById("portfolioDescription").textContent = portfolio.description;
+                    } else {
+                        document.getElementById("portfolioDetails").innerHTML = "<p>Portfólio não encontrado.</p>";
+                    }
+                })
+                .catch(err => console.error("Erro ao carregar portfólio:", err));
+        });
+    </script>
+</body>
+</html>
