@@ -1,10 +1,9 @@
 <?php
 include '../backend/config.php';
-include '../backend/auth.php'; // Garante que o usuário está logado
+include '../backend/auth.php';
 
 $user_id = $_SESSION['user_id'];
 
-// Buscar portfólios do usuário logado
 $stmt = $conn->prepare("SELECT * FROM portfolios WHERE user_id = :user_id");
 $stmt->bindParam(':user_id', $user_id);
 $stmt->execute();
@@ -15,7 +14,7 @@ $portfolios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Meu Portfólio</title>
+    <title>Meus Portfólios</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -25,15 +24,17 @@ $portfolios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <h3>Seus Portfólios</h3>
-
     <a href="../index.html">Criar Novo Portfólio</a>
 
     <div id="userPortfolioGallery">
         <?php foreach ($portfolios as $portfolio): ?>
             <div class="portfolio-item">
-                <img src="../assets/img/<?= $portfolio['image']; ?>" alt="<?= $portfolio['name']; ?>" width="100%">
-                <h4><?= $portfolio['name']; ?></h4>
-                <p><?= $portfolio['description']; ?></p>
+                <img src="../assets/img/<?= htmlspecialchars($portfolio['image']); ?>" alt="<?= htmlspecialchars($portfolio['name']); ?>" width="100%">
+                <h4><?= htmlspecialchars($portfolio['name']); ?></h4>
+                <p><?= htmlspecialchars($portfolio['description']); ?></p>
+
+                <!-- Link para a página individual do portfólio -->
+                <a href="../portfolio.php?id=<?= $portfolio['id']; ?>">Ver Portfólio</a>
 
                 <!-- Formulário para edição -->
                 <form action="../backend/edit_portfolio.php" method="POST">
