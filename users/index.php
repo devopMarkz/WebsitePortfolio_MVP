@@ -27,10 +27,6 @@ $portfolios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <main>
         <h3>Seus Portfólios</h3>
 
-        <div class="button-container">
-            <a href="create_portfolio.php" class="button button-criacao">Criar Novo Portfólio</a>
-        </div>
-
         <!-- Adicionando um delay para evitar sumiço rápido dos portfólios -->
         <div id="portfolioGallery" style="display: none;">
             <?php if (empty($portfolios)): ?>
