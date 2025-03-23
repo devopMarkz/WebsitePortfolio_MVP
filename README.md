@@ -16,6 +16,7 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
 ✅ **Compartilhamento via Link**  
 
 ## 📂 Estrutura do Projeto
+
 ```
 /portfolio-website
  ├── /assets
@@ -29,6 +30,7 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
  │   │   ├── create_portfolio.css
  │   │   ├── login.css
  │   │   ├── register.css
+ │   │   ├── navbar.css
  │   ├── /js
  │   │   ├── main.js
  │   │   ├── animations.js
@@ -50,6 +52,8 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
  ├── /users
  │   ├── index.php
  │   ├── create_portfolio.php
+ ├── /includes
+ │   ├── navbar.php
  ├── index.html
  ├── login.html
  ├── register.html
@@ -58,7 +62,6 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
  ├── edit_profile.php
  ├── README.md
  ```
-
 
 ## 💻 Como Rodar o Projeto
 1. Instale o **XAMPP** e inicie o **Apache** e **MySQL**.
@@ -104,8 +107,11 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
 
 4. Acesse no navegador:
 
-http://localhost/portfolio-website/ → Página Inicial
-
-http://localhost/portfolio-website/login.html → Login
-
-http://localhost/portfolio-website/users/index.php → Painel do Usuário
+   - [Página Inicial](http://localhost/portfolio-website/)
+   - [Login](http://localhost/portfolio-website/login.html)
+   - [Cadastro](http://localhost/portfolio-website/register.html)
+   - [Painel do Usuário (Dashboard)](http://localhost/portfolio-website/users/index.php)
+   - [Criar Novo Portfólio](http://localhost/portfolio-website/users/create_portfolio.php)
+   - [Perfil do Usuário](http://localhost/portfolio-website/profile.php)
+   - [Editar Perfil](http://localhost/portfolio-website/edit_profile.php)
+   - [Visualizar Portfólio](http://localhost/portfolio-website/portfolio.php?id=1) *(Substituir `id=1` pelo ID real do portfólio)*
