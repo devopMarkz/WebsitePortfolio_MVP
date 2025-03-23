@@ -11,25 +11,8 @@ body {
     background-color: #f4f4f9;
     color: #333;
     text-align: center;
-    padding: 20px;
 }
 
-/* Cabeçalho */
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    font-size: 24px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    border-radius: 8px;
-}
 
 /* Ajuste do botão de logout */
 .logout-button {
@@ -61,15 +44,15 @@ main {
     margin: 20px 0;
 }
 
-/* Galeria de Portfólios - Distribuição em Grid */
 #portfolioGallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cria um grid fluído */
-    gap: 25px; /* Espaçamento entre os portfólios */
+    display: flex;
+    gap: 25px;
     padding: 20px;
-    justify-content: center; /* Centraliza os portfólios no grid */
-    max-width: 900px;
-    margin: 0 auto;
+    justify-content: center; 
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    padding-left: 120px;
 }
 
 /* Cartão do Portfólio */
@@ -112,15 +95,4 @@ main {
 
 .portfolio-item a:hover {
     text-decoration: underline;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    main {
-        width: 95%;
-    }
-
-    #portfolioGallery {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Melhor distribuição em telas menores */
-    }
 }
