@@ -16,7 +16,6 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
 ✅ **Compartilhamento via Link**  
 
 ## 📂 Estrutura do Projeto
-
 ```
 /portfolio-website
  ├── /assets
@@ -64,15 +63,68 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
  ```
 
 ## 💻 Como Rodar o Projeto
-1. Instale o **XAMPP** e inicie o **Apache** e **MySQL**.
 
-2. No **phpMyAdmin**, crie um banco de dados chamado **`portfolio_db`** e execute este SQL:
+### 🛠 1. Pré-requisitos
+Antes de iniciar, certifique-se de ter os seguintes programas instalados:
+
+- **[XAMPP](https://www.apachefriends.org/pt_br/index.html)** (para rodar Apache e PHP)
+- **[Docker](https://www.docker.com/get-started)** (para rodar o banco MySQL)
+- **Um SGBD de sua preferência** (ex: **MySQL Workbench**, **DBeaver**, **HeidiSQL**, etc.)
+
+### 🐳 2. Configurando o MySQL no Docker
+Se ainda não possui um contêiner MySQL rodando, siga os passos abaixo:
+
+1. **Baixar e rodar um contêiner MySQL**:
+   ```sh
+   docker run --name mysql-portfolio -e MYSQL_ROOT_PASSWORD=123 -e MYSQL_DATABASE=portfolio_db -p 3307:3306 -d mysql:latest
+   ```
+
+2. **Verificar se o contêiner está rodando**:
+   ```sh
+   docker ps
+   ```
+
+### 🛠 3. Configurar o Projeto no XAMPP
+
+1. **Baixe ou clone o projeto** no diretório do XAMPP:
+   ```sh
+   cd C:/xampp/htdocs
+   git clone https://github.com/seu-repositorio/portfolio-website.git
+   ```
+
+2. **Configurar o arquivo `backend/config.php`**  
+   ```php
+   <?php
+   $host = "127.0.0.1";
+   $dbname = "portfolio_db";
+   $username = "root";
+   $password = "123";
+   $port = "3307"; // Porta do Docker
+
+   try {
+       $conn = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   } catch (PDOException $e) {
+       die("Erro na conexão: " . $e->getMessage());
+   }
+   ?>
+   ```
+
+### 🗄 4. Criando o Banco de Dados e Tabelas
+
+1. **Abra seu SGBD preferido** (ex: MySQL Workbench, DBeaver, HeidiSQL).  
+2. **Conecte-se ao banco de dados MySQL no Docker** com os seguintes dados:
+   - **Host:** `127.0.0.1`
+   - **Porta:** `3307`
+   - **Usuário:** `root`
+   - **Senha:** `123`
+   - **Banco de dados:** `portfolio_db`  
+
+3. **Execute os comandos SQL abaixo** para criar as tabelas:
    ```sql
-   CREATE DATABASE portfolio_db;
-
    USE portfolio_db;
 
-    CREATE TABLE users (
+   CREATE TABLE users (
        id INT AUTO_INCREMENT PRIMARY KEY,
        username VARCHAR(50) UNIQUE NOT NULL,
        email VARCHAR(100) UNIQUE NOT NULL,
@@ -101,17 +153,18 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
        FOREIGN KEY (portfolio_id) REFERENCES portfolios(id) ON DELETE CASCADE,
        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
    );
-   
+   ```
 
-3. Coloque os arquivos em C:/xampp/htdocs/portfolio-website/.
-
-4. Acesse no navegador:
-
+### 🔥 5. Executando o Projeto
+1. **Inicie o Apache pelo XAMPP**.
+2. **Acesse o site no navegador**:
    - [Página Inicial](http://localhost/portfolio-website/)
    - [Login](http://localhost/portfolio-website/login.html)
-   - [Cadastro](http://localhost/portfolio-website/register.html)
+   - [Registro](http://localhost/portfolio-website/register.html)
    - [Painel do Usuário (Dashboard)](http://localhost/portfolio-website/users/index.php)
    - [Criar Novo Portfólio](http://localhost/portfolio-website/users/create_portfolio.php)
    - [Perfil do Usuário](http://localhost/portfolio-website/profile.php)
    - [Editar Perfil](http://localhost/portfolio-website/edit_profile.php)
    - [Visualizar Portfólio](http://localhost/portfolio-website/portfolio.php?id=1) *(Substituir `id=1` pelo ID real do portfólio)*
+
+Agora o **Website de Portfólio Digital** está pronto para uso! 🚀🔥
