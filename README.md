@@ -14,6 +14,8 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
 ✅ **Edição e Exclusão de Portfólios**  
 ✅ **Visualização de Portfólios**  
 ✅ **Compartilhamento via Link**  
+✅ **Visualização de Perfil Pessoal**  
+✅ **Edição de Perfil Pessoal**    
 
 ## 📂 Estrutura do Projeto
 ```
@@ -89,7 +91,7 @@ Se ainda não possui um contêiner MySQL rodando, siga os passos abaixo:
 1. **Baixe ou clone o projeto** no diretório do XAMPP:
    ```sh
    cd C:/xampp/htdocs
-   git clone https://github.com/seu-repositorio/portfolio-website.git
+   git clone https://github.com/devopMarkz/WebsitePortfolio_MVP.git
    ```
 
 2. **Configurar o arquivo `backend/config.php`**  
