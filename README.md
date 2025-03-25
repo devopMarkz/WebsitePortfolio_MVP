@@ -69,7 +69,8 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
 ### 🛠 1. Pré-requisitos
 Antes de iniciar, certifique-se de ter os seguintes programas instalados:
 
-- **[XAMPP](https://www.apachefriends.org/pt_br/index.html)** (para rodar Apache e PHP)
+- **[XAMPP](https://www.apachefriends.org/pt_br/index.html)** (para rodar Apache e PHP)  
+  Ao baixar o XAMPP, abra o aplicativo e **clique em "Start" no módulo Apache** para iniciar o servidor local.
 - **[Docker](https://www.docker.com/get-started)** (para rodar o banco MySQL)
 - **Um SGBD de sua preferência** (ex: **MySQL Workbench**, **DBeaver**, **HeidiSQL**, etc.)
 
