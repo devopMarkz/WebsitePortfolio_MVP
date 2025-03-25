@@ -16,7 +16,7 @@ $portfolios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus Portfólios</title>
+    <title>Meus Projetos</title>
     <link rel="stylesheet" href="../assets/css/users.css">
 </head>
 <body>
@@ -25,19 +25,19 @@ $portfolios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../assets/css/navbar.css">
 
     <main>
-        <h3>Seus Portfólios</h3>
+        <h3>Seus Projetos</h3>
 
         <!-- Adicionando um delay para evitar sumiço rápido dos portfólios -->
         <div id="portfolioGallery" style="display: none;">
             <?php if (empty($portfolios)): ?>
-                <p class="no-portfolios">Você ainda não criou nenhum portfólio. Clique no botão acima para adicionar um novo!</p>
+                <p class="no-portfolios">Você ainda não criou nenhum projeto. Clique no botão acima para adicionar um novo!</p>
             <?php else: ?>
                 <?php foreach ($portfolios as $portfolio): ?>
                     <div class="portfolio-item">
                         <img src="../assets/img/<?= htmlspecialchars($portfolio['image']); ?>" alt="<?= htmlspecialchars($portfolio['name']); ?>">
                         <h4><?= htmlspecialchars($portfolio['name']); ?></h4>
                         <p><?= htmlspecialchars($portfolio['description']); ?></p>
-                        <a href="../portfolio.php?id=<?= $portfolio['id']; ?>" class="button">Ver Portfólio</a>
+                        <a href="../portfolio.php?id=<?= $portfolio['id']; ?>" class="button">Ver Projeto</a>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>

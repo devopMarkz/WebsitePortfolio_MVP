@@ -38,7 +38,7 @@ if (!$portfolio) {
         <p><?= nl2br(htmlspecialchars($portfolio['description'])) ?></p>
 
         <!-- Compartilhamento -->
-        <h3>Compartilhe este Portfólio:</h3>
+        <h3>Compartilhe este Projeto:</h3>
         <input type="text" id="shareLink" value="http://localhost/portfolio-website/portfolio.php?id=<?= $portfolio_id; ?>" readonly>
         <button onclick="copyLink()">Copiar Link</button>
 
