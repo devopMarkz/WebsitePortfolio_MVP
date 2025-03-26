@@ -6,7 +6,6 @@
     <title>Portfólio Digital</title>
     <link rel="stylesheet" href="assets/css/index.css">
     <script>
-        // Verifica se o usuário está logado e redireciona para index.php
         fetch("backend/auth.php")
             .then(response => response.json())
             .then(data => {
@@ -18,20 +17,30 @@
 </head>
 <body>
     <header>
-        <h1>Portfólio Digital</h1>
+        <div class="container">
+            <div class="logo">Portfólio Digital</div>
+            <nav class="nav">
+                <a href="register.html" class="nav-link">Criar Conta</a>
+                <a href="login.html" class="nav-link">Login</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <h2>Crie e Compartilhe Seu Portfólio</h2>
-        <p>Cadastre-se, publique seus projetos e compartilhe com o mundo!</p>
+        <section class="hero">
+            <h1>Publique projetos incríveis<br><span>e compartilhe seu talento.</span></h1>
+            <p>Organize seu portfólio digital de forma fácil, rápida e elegante.</p>
 
-        <div class="button-container">
-            <a href="register.html" class="button">Criar Conta</a>
-            <a href="login.html" class="button">Login</a>
-        </div>
+            <div class="cta-buttons">
+                <a href="register.html" class="button purple">Criar uma Conta</a>
+                <a href="login.html" class="button outline">Já tenho Conta</a>
+            </div>
+        </section>
 
-        <h3>Últimos Portfólios</h3>
-        <div id="portfolioGallery"></div>
+        <section class="gallery-preview">
+            <h3>Exemplos Recentes</h3>
+            <div id="portfolioGallery"></div>
+        </section>
     </main>
 
     <script src="assets/js/animations.js"></script>
