@@ -122,7 +122,7 @@ CREATE TABLE comments (
    git clone https://github.com/devopMarkz/WebsitePortfolio_MVP.git
    ```
 
-2. **Configurar o arquivo `backend/config.php` e configure de acordo com os dados da conexão criada em sua máquina**  
+2. **Configurar o arquivo `backend/config.php` de acordo com os dados da conexão criada em sua máquina**  
    ```php
    <?php
    $host = "127.0.0.1";
