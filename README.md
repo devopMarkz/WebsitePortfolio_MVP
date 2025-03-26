@@ -116,7 +116,7 @@ CREATE TABLE comments (
 ```
 
 ### 🔥 3. Executando o Projeto
-1. **Baixe ou clone o projeto** no diretório do XAMPP:
+1. **Baixe ou clone o projeto** no diretório do XAMPP, dentro de htdocs:
    ```sh
    cd C:/xampp/htdocs
    git clone https://github.com/devopMarkz/WebsitePortfolio_MVP.git
