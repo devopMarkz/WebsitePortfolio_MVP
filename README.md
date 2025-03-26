@@ -119,7 +119,7 @@ CREATE TABLE comments (
 1. **Baixe ou clone o projeto** no diretório do XAMPP:
    ```sh
    cd C:/xampp/htdocs
-   git clone https://github.com/seu-repositorio/portfolio-website.git
+   git clone https://github.com/devopMarkz/WebsitePortfolio_MVP.git
    ```
 
 2. **Configurar o arquivo `backend/config.php` de acordo com os dados da conexão criada**  
