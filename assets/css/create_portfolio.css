@@ -8,61 +8,36 @@
 
 /* Corpo da página */
 body {
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
+    background-color: #0f0f10;
+    color: #fff;
+    padding-top: 80px; /* Espaço para evitar sobreposição com a navbar fixa */
 }
 
-/* Cabeçalho */
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    font-size: 24px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    border-radius: 8px;
+/* Container do formulário */
+.create-project-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    background-color: #1c1c1e;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-align: center;
 }
 
-header h2 {
-    margin-left: 15px;
-    font-size: 22px;
+/* Título e subtítulo */
+.create-project-container h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-header a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    background-color: #e74c3c;
-    border-radius: 5px;
-    transition: background 0.3s;
-    margin-right: 15px;
-}
-
-header a:hover {
-    background-color: #c0392b;
+.create-project-container p {
+    font-size: 16px;
+    color: #bbb;
+    margin-bottom: 30px;
 }
 
 /* Estilização do formulário */
-main {
-    width: 100%;
-    max-width: 800px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -70,36 +45,38 @@ form {
 
 label {
     font-weight: bold;
-    margin: 10px 0 5px;
+    color: #fff;
+    margin: 12px 0 5px;
 }
 
 input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 12px;
     margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #2a2a2d;
+    color: #fff;
+    font-size: 16px;
 }
 
 textarea {
     resize: vertical;
-    height: 100px;
+    height: 120px;
 }
 
 /* Botão de envio */
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 12px;
+    background-color: #6c47ff;
     color: white;
+    font-weight: bold;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #5a38d3;
 }

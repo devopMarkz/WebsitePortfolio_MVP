@@ -14,7 +14,10 @@ include '../backend/auth.php';
     <?php include '../includes/navbar.php'; ?>
     <link rel="stylesheet" href="../assets/css/navbar.css">
 
-    <main>
+    <main class="create-project-container">
+        <h1>Criar Novo Projeto</h1>
+        <p>Adicione os detalhes do seu projeto e compartilhe com o mundo.</p>
+
         <form action="../backend/save_portfolio.php" method="POST" enctype="multipart/form-data">
             <label for="name">Nome do Projeto:</label>
             <input type="text" id="name" name="name" required>
