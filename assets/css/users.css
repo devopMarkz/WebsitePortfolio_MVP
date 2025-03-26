@@ -6,93 +6,76 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Corpo da página */
+/* Corpo */
 body {
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #0e0e10;
+    color: #fff;
+    padding-top: 80px; /* para evitar sobreposição com navbar fixa */
+}
+
+/* Título principal */
+.dashboard-title {
     text-align: center;
-}
-
-
-/* Ajuste do botão de logout */
-.logout-button {
-    background-color: #e74c3c !important;
-    color: white;
+    font-size: 28px;
     font-weight: bold;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background 0.3s;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-.logout-button:hover {
-    background-color: #c0392b;
-}
-
-/* Container principal */
-main {
-    max-width: 1100px; /* Maior largura para acomodar os portfólios */
-    margin: 80px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Botão Criar Novo Portfólio */
-.button-container {
-    margin: 20px 0;
-}
-
+/* Container de projetos */
 #portfolioGallery {
     display: flex;
+    flex-wrap: wrap;
     gap: 25px;
+    justify-content: center;
     padding: 20px;
-    justify-content: center; 
-    max-width: 100%;
-    align-items: center;
-    text-align: center;
-    padding-left: 120px;
+    display: none;
 }
 
-/* Cartão do Portfólio */
+/* Cartões de projeto */
 .portfolio-item {
-    background-color: white;
-    padding: 20px;
+    background-color: #1c1c1e;
+    color: #eee;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .portfolio-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
-/* Ajuste de imagens */
+/* Imagem do projeto */
 .portfolio-item img {
-    max-width: 400px;
-    height: 400px;
-    height: auto; /* Mantém a proporção correta da imagem */
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.portfolio-item img:hover {
-    transform: scale(1.1);
-}
-
-/* Links dentro dos cards */
-.portfolio-item a {
-    display: block;
-    text-decoration: none;
+/* Botão de ação */
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #6c47ff;
+    color: white;
     font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
     margin-top: 10px;
-    color: #4CAF50;
+    transition: background-color 0.3s ease;
 }
 
-.portfolio-item a:hover {
-    text-decoration: underline;
+.button:hover {
+    background-color: #5a38d3;
+}
+
+/* Mensagem de aviso */
+.no-portfolios {
+    text-align: center;
+    margin-top: 60px;
+    color: #ccc;
+    font-size: 16px;
 }
