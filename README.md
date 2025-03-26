@@ -122,14 +122,14 @@ CREATE TABLE comments (
    git clone https://github.com/devopMarkz/WebsitePortfolio_MVP.git
    ```
 
-2. **Configurar o arquivo `backend/config.php` de acordo com os dados da conexão criada**  
+2. **Configurar o arquivo `backend/config.php` e configure de acordo com os dados da conexão criada em sua máquina**  
    ```php
    <?php
    $host = "127.0.0.1";
    $dbname = "portfolio_db";
    $username = "root"; // Pode variar
    $password = "123"; // Varia de acordo com a senha do seu usuário do BD
-   $port = "3306"; // Porta padrão do banco de dados
+   $port = "3306"; // Porta padrão do banco de dados, mas pode variar de acordo com sua conexão
 
    try {
        $conn = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
