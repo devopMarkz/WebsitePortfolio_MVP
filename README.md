@@ -14,8 +14,6 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
 ✅ **Edição e Exclusão de Projetos**  
 ✅ **Visualização de Projetos**  
 ✅ **Compartilhamento via Link**  
-✅ **Comentários Públicos**  
-✅ **Perfil do Usuário com Edição**  
 
 ## 📂 Estrutura do Projeto
 ```
@@ -69,20 +67,62 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
 ### 🛠 1. Pré-requisitos
 Antes de iniciar, certifique-se de ter os seguintes programas instalados:
 
-- **[XAMPP](https://www.apachefriends.org/pt_br/index.html)** (para rodar Apache e PHP)  
-  Ao baixar o XAMPP, abra o aplicativo e **clique em "Start" no módulo Apache** para iniciar o servidor local.
+- **[XAMPP](https://www.apachefriends.org/pt_br/index.html)** (para rodar Apache e PHP)
+- **[Docker](https://www.docker.com/get-started)** (para rodar o banco MySQL)
+- **Um SGBD de sua preferência** (ex: **MySQL Workbench**, **DBeaver**, **HeidiSQL**, etc.)
 
-- **MySQL Workbench** (ou outro SGBD de sua preferência)
+### 🐳 2. Configurando o MySQL no Docker
+Se ainda não possui um contêiner MySQL rodando, siga os passos abaixo:
 
-### 🐬 2. Configurando o Banco de Dados via MySQL Workbench
+1. **Baixar e rodar um contêiner MySQL**:
+   ```sh
+   docker run --name mysql-portfolio -e MYSQL_ROOT_PASSWORD=123 -e MYSQL_DATABASE=portfolio_db -p 3307:3306 -d mysql:latest
+   ```
 
-1. Abra o **MySQL Workbench** (ou outro SGBD de sua preferência).  
-2. Conecte-se ao seu servidor local (`127.0.0.1`).  
-3. Crie um novo banco de dados com o nome `portfolio_db`.  
-4. Acesse a aba de SQL e **execute os comandos abaixo** para criar as tabelas necessárias:
+2. **Verificar se o contêiner está rodando**:
+   ```sh
+   docker ps
+   ```
 
-```sql
-USE portfolio_db;
+### 🛠 3. Configurar o Projeto no XAMPP
+
+1. **Baixe ou clone o projeto** no diretório do XAMPP:
+   ```sh
+   cd C:/xampp/htdocs
+   git clone https://github.com/seu-repositorio/portfolio-website.git
+   ```
+
+2. **Configurar o arquivo `backend/config.php`**  
+   ```php
+   <?php
+   $host = "127.0.0.1";
+   $dbname = "portfolio_db";
+   $username = "root";
+   $password = "123";
+   $port = "3307"; // Porta do Docker
+
+   try {
+       $conn = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   } catch (PDOException $e) {
+       die("Erro na conexão: " . $e->getMessage());
+   }
+   ?>
+   ```
+
+### 🗄 4. Criando o Banco de Dados e Tabelas
+
+1. **Abra seu SGBD preferido** (ex: MySQL Workbench, DBeaver, HeidiSQL).  
+2. **Conecte-se ao banco de dados MySQL no Docker** com os seguintes dados:
+   - **Host:** `127.0.0.1`
+   - **Porta:** `3307`
+   - **Usuário:** `root`
+   - **Senha:** `123`
+   - **Banco de dados:** `portfolio_db`  
+
+3. **Execute os comandos SQL abaixo** para criar as tabelas:
+   ```sql
+   USE portfolio_db;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
