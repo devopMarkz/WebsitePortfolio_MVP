@@ -1,8 +1,8 @@
-/* Estilização da barra de navegação */
+/* Estilização moderna da barra de navegação */
 .navbar {
-    background-color: #4CAF50;
-    padding: 15px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #0e0e10;
+    padding: 20px 0;
+    box-shadow: 0 1px 0 #222;
     position: fixed;
     top: 0;
     width: 100%;
@@ -10,49 +10,53 @@
 }
 
 .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
+/* Logo */
 .nav-logo {
-    color: white;
     font-size: 20px;
+    color: #fff;
     font-weight: bold;
     text-decoration: none;
 }
 
+/* Links de navegação */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .nav-links li {
-    display: inline;
+    display: inline-block;
 }
 
 .nav-links a {
-    color: white;
+    color: #bbb;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: background 0.3s;
-    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    background-color: #1a1a1a;
 }
 
 /* Botão de logout */
 .logout-btn {
     background-color: #e74c3c;
-    padding: 10px 15px;
-    border-radius: 5px;
+    color: white !important;
+    font-weight: bold;
 }
 
 .logout-btn:hover {
@@ -63,12 +67,11 @@
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
-        align-items: center;
+        gap: 10px;
     }
 
     .nav-links {
         flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        align-items: center;
     }
 }
