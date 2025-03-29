@@ -15,7 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':user_id', $_SESSION['user_id']);
 
     if ($stmt->execute()) {
-        echo "Portfólio excluído com sucesso!";
+        echo "<script>
+                alert('Portfólio excluído com sucesso!');
+                window.location.href = '../users/index.php';
+              </script>";
+        exit();
     } else {
         echo "Erro ao excluir.";
     }

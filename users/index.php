@@ -36,6 +36,11 @@ $portfolios = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <h3><?= htmlspecialchars($portfolio['name']); ?></h3>
                         <p><?= htmlspecialchars($portfolio['description']); ?></p>
                         <a href="../portfolio.php?id=<?= $portfolio['id']; ?>" class="button">Ver Projeto</a>
+                        <a href="edit_portfolio.php?id=<?= $portfolio['id']; ?>" class="button">Editar</a>
+                        <form action="../backend/delete_portfolio.php" method="POST" style="display: inline;">
+                            <input type="hidden" name="id" value="<?= $portfolio['id']; ?>">
+                            <button type="submit" class="button" style="background-color: #e74c3c; border-radius: 5px; color: white;">Deletar</button>
+                        </form>
                     </div>
                 <?php endforeach; ?>
             </div>
