@@ -19,7 +19,7 @@ body {
     margin: auto;
     background-color: #1c1c1e;
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 4px;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
@@ -41,7 +41,7 @@ body {
 /* Imagem */
 .portfolio-img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 4px;
     object-fit: cover;
     margin-bottom: 25px;
 }
@@ -59,7 +59,7 @@ body {
 .share-box {
     background-color: #2a2a2d;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 6px;
     text-align: center;
     margin-bottom: 40px;
 }
