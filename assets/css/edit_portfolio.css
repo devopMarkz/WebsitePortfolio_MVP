@@ -1,0 +1,92 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: #0f0f10;
+    color: #fff;
+    padding-top: 80px; /* Espaço para evitar sobreposição com a navbar fixa */
+}
+
+/* Container do formulário */
+.edit-project-container {
+    max-width: 800px; /* Limitar a largura */
+    margin: auto;
+    padding: 40px;
+    background-color: #1c1c1e;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* Título e subtítulo */
+h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.edit-project-container p {
+    font-size: 16px;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+/* Estilização do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os campos */
+    width: 100%;
+}
+
+/* Label e inputs */
+label {
+    font-weight: bold;
+    color: #fff;
+    margin: 12px 0 5px;
+    width: 100%;
+    text-align: center;
+}
+
+input, textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #2a2a2d;
+    color: #fff;
+    font-size: 16px;
+    width: 100%;
+    max-width: 600px; /* Definindo largura máxima */
+}
+
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+/* Botão de envio */
+button {
+    padding: 12px;
+    background-color: #6c47ff;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Para preencher a largura */
+    max-width: 600px; /* Limitar a largura do botão */
+}
+
+button:hover {
+    background-color: #5a38d3;
+}

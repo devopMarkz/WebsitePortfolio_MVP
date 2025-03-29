@@ -35,6 +35,7 @@ if (!$portfolio) {
 </head>
 <body>
     <?php include '../includes/navbar.php'; ?>
+    <link rel="stylesheet" href="../assets/css/navbar.css">
 
     <main>
         <h1>Editar Projeto</h1>
