@@ -78,6 +78,14 @@ body {
     text-align: center;
 }
 
+.b-delete{
+    background-color: #e74c3c;
+    border-radius: 5px;
+    color: white;
+    display: block;
+    width: 100%;
+}
+
 .button:hover {
     background-color: #5a38d3;
 }
