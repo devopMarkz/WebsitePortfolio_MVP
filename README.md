@@ -43,7 +43,7 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
  │   ├── login.php
  │   ├── logout.php
  │   ├── save_portfolio.php
- │   ├── edit_portfolio.php
+ │   ├── edit_portfolio.php  <-- **Aqui está o arquivo para editar o portfólio**
  │   ├── delete_portfolio.php
  │   ├── get_portfolios.php
  │   ├── get_portfolio.php
@@ -53,6 +53,7 @@ Este é um **MVP** de um site que permite que os usuários criem, editem e compa
  ├── /users
  │   ├── index.php
  │   ├── create_portfolio.php
+ │   ├── edit_portfolio.php  <-- **Aqui está o arquivo de edição de portfólio que os usuários irão acessar**
  ├── /includes
  │   ├── navbar.php
  ├── index.html
